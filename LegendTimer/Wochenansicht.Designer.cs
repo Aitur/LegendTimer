@@ -1,11 +1,14 @@
-﻿namespace TimeTracker
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace TimeTracker
 {
     partial class Wochenansicht
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -233,7 +236,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Wochenansicht";
             this.Text = "Wochenansicht";
-            this.Load += new System.EventHandler(this.showData);
+            this.Load += new System.EventHandler(this.ShowData);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,20 +244,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblMontag;
-        private System.Windows.Forms.Label lblDienstag;
-        private System.Windows.Forms.Label lblMittwoch;
-        private System.Windows.Forms.Label lblDonnerstag;
-        private System.Windows.Forms.Label lblFreitag;
-        private System.Windows.Forms.Label lblSamstag;
-        private System.Windows.Forms.Label lblSonntag;
-        private System.Windows.Forms.Button btnExportieren;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label lblMontag;
+        private Label lblDienstag;
+        private Label lblMittwoch;
+        private Label lblDonnerstag;
+        private Label lblFreitag;
+        private Label lblSamstag;
+        private Label lblSonntag;
+        private Button btnExportieren;
     }
 }

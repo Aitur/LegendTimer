@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LegendTimer
@@ -17,7 +10,7 @@ namespace LegendTimer
             InitializeComponent();
         }
 
-        private void zeitNachtragen(object sender, EventArgs e)
+        private void TimeNachtragen(object sender, EventArgs e)
         {
             int tempSecond;
             int tempMinutes;
@@ -25,7 +18,8 @@ namespace LegendTimer
             int.TryParse(textBoxSeconds.Text, out tempSecond);
             int.TryParse(textBoxMinutes.Text, out tempMinutes);
             int.TryParse(textBoxHours.Text, out tempHours);
-            TextFileOperations.saveFile(tempSecond, tempMinutes, tempHours, dateTimePicker.Value.Day, dateTimePicker.Value.Month, dateTimePicker.Value.Year);
+            TextFileOperations.SaveFile(tempSecond, tempMinutes, tempHours, dateTimePicker.Value.Day,
+                dateTimePicker.Value.Month, dateTimePicker.Value.Year);
         }
     }
 }

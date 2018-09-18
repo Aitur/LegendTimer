@@ -1,11 +1,14 @@
-﻿namespace LegendTimer
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace LegendTimer
 {
     partial class ZeitNachtragen
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -71,7 +74,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Bestätigen";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.zeitNachtragen);
+            this.button1.Click += new System.EventHandler(this.TimeNachtragen);
             // 
             // dateTimePicker
             // 
@@ -100,10 +103,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxSeconds;
-        private System.Windows.Forms.TextBox textBoxMinutes;
-        private System.Windows.Forms.TextBox textBoxHours;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private TextBox textBoxSeconds;
+        private TextBox textBoxMinutes;
+        private TextBox textBoxHours;
+        private Button button1;
+        private DateTimePicker dateTimePicker;
     }
 }

@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTracker;
 
@@ -18,53 +10,55 @@ namespace LegendTimer
         {
             InitializeComponent();
         }
-        bool timerTicking = false;
-        DateTime timepointWhenCurrentSessionStarted;
-        TimeSpan summedTimeFromAllPreviousSessions = new TimeSpan(0);
-        TimeSpan durationOfCurrentSession;
+        bool _timerTicking;
+        DateTime _timepointWhenCurrentSessionStarted;
+        TimeSpan _summedTimeFromAllPreviousSessions = new TimeSpan(0);
+        TimeSpan _durationOfCurrentSession;
 
-        private void startOrStopSession(object sender, EventArgs e)
+        private void StartOrStopSession(object sender, EventArgs e)
         {
             //If the timer ist currently not ticking, an new Session ist started.
-            if (timerTicking == false)
+            if (_timerTicking == false)
             {
                 buttonStart.Text = "Break";
                 timer1.Start();
-                timepointWhenCurrentSessionStarted = DateTime.Now;
-                timerTicking = true;
+                _timepointWhenCurrentSessionStarted = DateTime.Now;
+                _timerTicking = true;
             }
             //Otherwise the Session is ended and the resulting time is saved.
             else
             {
                 buttonStart.Text = "Weiter";
                 timer1.Stop();
-                summedTimeFromAllPreviousSessions += DateTime.Now - timepointWhenCurrentSessionStarted;
-                timerTicking = false;
+                _summedTimeFromAllPreviousSessions += DateTime.Now - _timepointWhenCurrentSessionStarted;
+                _timerTicking = false;
             }
         }
 
-        private void updateDisplaiedTime(object sender, EventArgs e)
+        private void UpdateDisplaiedTime(object sender, EventArgs e)
         {
-            durationOfCurrentSession = summedTimeFromAllPreviousSessions + (DateTime.Now - timepointWhenCurrentSessionStarted);
-            labelZeitAnzeige.Text = durationOfCurrentSession.Hours + ":" + durationOfCurrentSession.Minutes + ":" 
-                + durationOfCurrentSession.Seconds;
+            _durationOfCurrentSession = _summedTimeFromAllPreviousSessions + (DateTime.Now - _timepointWhenCurrentSessionStarted);
+            labelZeitAnzeige.Text = _durationOfCurrentSession.Hours + ":" + _durationOfCurrentSession.Minutes + ":" 
+                + _durationOfCurrentSession.Seconds;
         }
 
-        private void saveBeforeClosing(object sender, FormClosingEventArgs e)
+        private void SaveBeforeClosing(object sender, FormClosingEventArgs e)
         {
             //Otherwise the timer was never started, so there would be nothing to save.
             if (!labelZeitAnzeige.Equals("00:00:00"))
             {
-                TextFileOperations.saveFile(durationOfCurrentSession.Seconds, durationOfCurrentSession.Minutes, durationOfCurrentSession.Hours, timepointWhenCurrentSessionStarted.Day, timepointWhenCurrentSessionStarted.Month, timepointWhenCurrentSessionStarted.Year);
+                TextFileOperations.SaveFile(_durationOfCurrentSession.Seconds, _durationOfCurrentSession.Minutes,
+                    _durationOfCurrentSession.Hours, _timepointWhenCurrentSessionStarted.Day,
+                    _timepointWhenCurrentSessionStarted.Month, _timepointWhenCurrentSessionStarted.Year);
             }
         }
-        private void fillInTime(object sender, EventArgs e)
+        private void FillInTime(object sender, EventArgs e)
         {
             ZeitNachtragen formFillIn = new ZeitNachtragen();
             formFillIn.Show();
         }
 
-        private void showWeeklyEvaluation(object sender, EventArgs e)
+        private void ShowWeeklyEvaluation(object sender, EventArgs e)
         {
             Wochenansicht wochenansicht = new Wochenansicht();
             wochenansicht.Show();

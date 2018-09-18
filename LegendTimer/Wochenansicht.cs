@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LegendTimer;
 
@@ -30,10 +23,10 @@ namespace TimeTracker
 
         }
 
-        private void showData(object sender, EventArgs e)
+        private void ShowData(object sender, EventArgs e)
         {
-            String[] data = TextFileOperations.loadFile();
-            DateTime[] daysOfTheWeek = calculateDaysOfWeek();
+            String[] data = TextFileOperations.LoadFile();
+            DateTime[] daysOfTheWeek = CalculateDaysOfWeek();
             string[] readDayData;
             int tempSeconds;
             int tempMinutes;
@@ -54,13 +47,13 @@ namespace TimeTracker
                         int.TryParse(readDayData[0], out tempSeconds);
                         int.TryParse(readDayData[1], out tempMinutes);
                         int.TryParse(readDayData[2], out tempHours);
-                        fillDayLabel(daysOfTheWeek[i].DayOfWeek,tempHours,tempMinutes,tempSeconds);
+                        FillDayLabel(daysOfTheWeek[i].DayOfWeek,tempHours,tempMinutes,tempSeconds);
                     }
                 }
             }
         }
 
-        private void fillDayLabel(DayOfWeek dayOfWeek, int hours, int minutes, int seconds)
+        private void FillDayLabel(DayOfWeek dayOfWeek, int hours, int minutes, int seconds)
         {
             switch (dayOfWeek)
             {
@@ -88,9 +81,9 @@ namespace TimeTracker
             }
         }
 
-        private DateTime[] calculateDaysOfWeek()
+        private DateTime[] CalculateDaysOfWeek()
         {
-            DateTime mondayOfWeek = calculateStartOfWeek();
+            DateTime mondayOfWeek = CalculateStartOfWeek();
             DateTime[] daysOfWeek = new DateTime[7];
             for (int i = 0; i < 7; i++)
             {
@@ -100,7 +93,7 @@ namespace TimeTracker
             return daysOfWeek;
         }
 
-        private DateTime calculateStartOfWeek()
+        private DateTime CalculateStartOfWeek()
         {
             DateTime now = DateTime.Now;
             switch (now.DayOfWeek)
