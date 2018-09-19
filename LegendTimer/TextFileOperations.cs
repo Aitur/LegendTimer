@@ -27,6 +27,7 @@ namespace LegendTimer
             //Otherwise there ist already a file. It is checked, wether there is already an entry for the given day.
             else
             {
+
                 bool alreadySavedToday = false;
                 string[] loadedDays = LoadFile();
                 for (int i = 0; i < loadedDays.Length; i++)
