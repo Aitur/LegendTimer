@@ -11,43 +11,24 @@ namespace TimeTracker
             InitializeComponent();
         }
 
-        public void Zeiten_setzen()
-        {
-            lblMontag.Text = "0:0:0";
-            lblDienstag.Text = "0:0:0";
-            lblMittwoch.Text = "0:0:0";
-            lblDonnerstag.Text = "0:0:0";
-            lblFreitag.Text = "0:0:0";
-            lblSamstag.Text = "0:0:0";
-            lblSonntag.Text = "0:0:0";
-
-        }
-
         private void ShowData(object sender, EventArgs e)
         {
             String[] data = TextFileOperations.LoadFile();
             DateTime[] daysOfTheWeek = CalculateDaysOfWeek();
-            string[] readDayData;
-            int tempSeconds;
-            int tempMinutes;
-            int tempHours;
-            int tempDay;
-            int tempMonth;
-            int tempYear;
             foreach (string readDay in data)
             {
-                readDayData = readDay.Split(';');
-                int.TryParse(readDayData[3],out tempDay);
-                int.TryParse(readDayData[4], out tempMonth);
-                int.TryParse(readDayData[5], out tempYear);
-                for(int i = 0; i < 7; i++)
+                string[] readDayData = readDay.Split(';');
+                int.TryParse(readDayData[3], out int tempDay);
+                int.TryParse(readDayData[4], out int tempMonth);
+                int.TryParse(readDayData[5], out int tempYear);
+                for (int i = 0; i < 7; i++)
                 {
                     if (tempDay == daysOfTheWeek[i].Day && tempMonth == daysOfTheWeek[i].Month && tempYear == daysOfTheWeek[i].Year)
                     {
-                        int.TryParse(readDayData[0], out tempSeconds);
-                        int.TryParse(readDayData[1], out tempMinutes);
-                        int.TryParse(readDayData[2], out tempHours);
-                        FillDayLabel(daysOfTheWeek[i].DayOfWeek,tempHours,tempMinutes,tempSeconds);
+                        int.TryParse(readDayData[0], out int tempSeconds);
+                        int.TryParse(readDayData[1], out int tempMinutes);
+                        int.TryParse(readDayData[2], out int tempHours);
+                        FillDayLabel(daysOfTheWeek[i].DayOfWeek, tempHours, tempMinutes, tempSeconds);
                     }
                 }
             }
