@@ -86,7 +86,7 @@ namespace LegendTimer
             // 
             // timer1
             // 
-            this.timer1.Tick += new EventHandler(this.UpdateDisplayedTime);
+            this.timer1.Tick += new EventHandler(this.UpdateDisplaiedTime);
             // 
             // MainForm
             // 

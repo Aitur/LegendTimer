@@ -52,28 +52,28 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="WeeklyOverview.cs">
+    <Compile Include="Wochenansicht.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WeeklyOverview.designer.cs">
-      <DependentUpon>WeeklyOverview.cs</DependentUpon>
+    <Compile Include="Wochenansicht.designer.cs">
+      <DependentUpon>Wochenansicht.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTimeManually.cs">
+    <Compile Include="ZeitNachtragen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTimeManually.Designer.cs">
-      <DependentUpon>AddTimeManually.cs</DependentUpon>
+    <Compile Include="ZeitNachtragen.Designer.cs">
+      <DependentUpon>ZeitNachtragen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WeeklyOverview.resx">
-      <DependentUpon>WeeklyOverview.cs</DependentUpon>
+    <EmbeddedResource Include="Wochenansicht.resx">
+      <DependentUpon>Wochenansicht.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTimeManually.resx">
-      <DependentUpon>AddTimeManually.cs</DependentUpon>
+    <EmbeddedResource Include="ZeitNachtragen.resx">
+      <DependentUpon>ZeitNachtragen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
