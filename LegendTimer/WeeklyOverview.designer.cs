@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace TimeTracker
 {
-    partial class Wochenansicht
+    partial class WeeklyOverview
     {
         /// <summary>
         /// Required designer variable.
@@ -52,10 +52,9 @@ namespace TimeTracker
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.Location = new System.Drawing.Point(16, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 52);
+            this.label1.Size = new System.Drawing.Size(119, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Montag";
             // 
@@ -63,10 +62,9 @@ namespace TimeTracker
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label2.Location = new System.Drawing.Point(16, 69);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 52);
+            this.label2.Size = new System.Drawing.Size(137, 42);
             this.label2.TabIndex = 1;
             this.label2.Text = "Dienstag";
             // 
@@ -74,10 +72,9 @@ namespace TimeTracker
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label3.Location = new System.Drawing.Point(16, 137);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 52);
+            this.label3.Size = new System.Drawing.Size(139, 42);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mittwoch";
             // 
@@ -85,10 +82,9 @@ namespace TimeTracker
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label4.Location = new System.Drawing.Point(16, 202);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 52);
+            this.label4.Size = new System.Drawing.Size(171, 42);
             this.label4.TabIndex = 3;
             this.label4.Text = "Donnerstag";
             // 
@@ -96,10 +92,9 @@ namespace TimeTracker
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label5.Location = new System.Drawing.Point(16, 273);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 52);
+            this.label5.Size = new System.Drawing.Size(113, 42);
             this.label5.TabIndex = 4;
             this.label5.Text = "Freitag";
             // 
@@ -107,10 +102,9 @@ namespace TimeTracker
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label6.Location = new System.Drawing.Point(16, 342);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 278);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 52);
+            this.label6.Size = new System.Drawing.Size(133, 42);
             this.label6.TabIndex = 5;
             this.label6.Text = "Samstag";
             // 
@@ -118,10 +112,9 @@ namespace TimeTracker
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label7.Location = new System.Drawing.Point(16, 398);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(12, 323);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 52);
+            this.label7.Size = new System.Drawing.Size(132, 42);
             this.label7.TabIndex = 6;
             this.label7.Text = "Sonntag";
             // 
@@ -129,10 +122,9 @@ namespace TimeTracker
             // 
             this.lblMontag.AutoSize = true;
             this.lblMontag.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblMontag.Location = new System.Drawing.Point(295, 22);
-            this.lblMontag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMontag.Location = new System.Drawing.Point(221, 18);
             this.lblMontag.Name = "lblMontag";
-            this.lblMontag.Size = new System.Drawing.Size(159, 52);
+            this.lblMontag.Size = new System.Drawing.Size(128, 42);
             this.lblMontag.TabIndex = 7;
             this.lblMontag.Text = "00:00:00";
             // 
@@ -140,10 +132,9 @@ namespace TimeTracker
             // 
             this.lblDienstag.AutoSize = true;
             this.lblDienstag.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblDienstag.Location = new System.Drawing.Point(295, 75);
-            this.lblDienstag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDienstag.Location = new System.Drawing.Point(221, 61);
             this.lblDienstag.Name = "lblDienstag";
-            this.lblDienstag.Size = new System.Drawing.Size(159, 52);
+            this.lblDienstag.Size = new System.Drawing.Size(128, 42);
             this.lblDienstag.TabIndex = 8;
             this.lblDienstag.Text = "00:00:00";
             // 
@@ -151,10 +142,9 @@ namespace TimeTracker
             // 
             this.lblMittwoch.AutoSize = true;
             this.lblMittwoch.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblMittwoch.Location = new System.Drawing.Point(295, 145);
-            this.lblMittwoch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMittwoch.Location = new System.Drawing.Point(221, 111);
             this.lblMittwoch.Name = "lblMittwoch";
-            this.lblMittwoch.Size = new System.Drawing.Size(159, 52);
+            this.lblMittwoch.Size = new System.Drawing.Size(128, 42);
             this.lblMittwoch.TabIndex = 9;
             this.lblMittwoch.Text = "00:00:00";
             // 
@@ -162,10 +152,9 @@ namespace TimeTracker
             // 
             this.lblDonnerstag.AutoSize = true;
             this.lblDonnerstag.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblDonnerstag.Location = new System.Drawing.Point(295, 210);
-            this.lblDonnerstag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDonnerstag.Location = new System.Drawing.Point(221, 171);
             this.lblDonnerstag.Name = "lblDonnerstag";
-            this.lblDonnerstag.Size = new System.Drawing.Size(159, 52);
+            this.lblDonnerstag.Size = new System.Drawing.Size(128, 42);
             this.lblDonnerstag.TabIndex = 10;
             this.lblDonnerstag.Text = "00:00:00";
             // 
@@ -173,10 +162,9 @@ namespace TimeTracker
             // 
             this.lblFreitag.AutoSize = true;
             this.lblFreitag.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblFreitag.Location = new System.Drawing.Point(295, 279);
-            this.lblFreitag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFreitag.Location = new System.Drawing.Point(221, 227);
             this.lblFreitag.Name = "lblFreitag";
-            this.lblFreitag.Size = new System.Drawing.Size(159, 52);
+            this.lblFreitag.Size = new System.Drawing.Size(128, 42);
             this.lblFreitag.TabIndex = 11;
             this.lblFreitag.Text = "00:00:00";
             // 
@@ -184,10 +172,9 @@ namespace TimeTracker
             // 
             this.lblSamstag.AutoSize = true;
             this.lblSamstag.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblSamstag.Location = new System.Drawing.Point(295, 342);
-            this.lblSamstag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSamstag.Location = new System.Drawing.Point(221, 278);
             this.lblSamstag.Name = "lblSamstag";
-            this.lblSamstag.Size = new System.Drawing.Size(159, 52);
+            this.lblSamstag.Size = new System.Drawing.Size(128, 42);
             this.lblSamstag.TabIndex = 12;
             this.lblSamstag.Text = "00:00:00";
             // 
@@ -195,29 +182,27 @@ namespace TimeTracker
             // 
             this.lblSonntag.AutoSize = true;
             this.lblSonntag.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblSonntag.Location = new System.Drawing.Point(295, 398);
-            this.lblSonntag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSonntag.Location = new System.Drawing.Point(221, 323);
             this.lblSonntag.Name = "lblSonntag";
-            this.lblSonntag.Size = new System.Drawing.Size(159, 52);
+            this.lblSonntag.Size = new System.Drawing.Size(128, 42);
             this.lblSonntag.TabIndex = 13;
             this.lblSonntag.Text = "00:00:00";
             // 
             // btnExportieren
             // 
             this.btnExportieren.Font = new System.Drawing.Font("Papyrus", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnExportieren.Location = new System.Drawing.Point(13, 454);
-            this.btnExportieren.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportieren.Location = new System.Drawing.Point(10, 369);
             this.btnExportieren.Name = "btnExportieren";
-            this.btnExportieren.Size = new System.Drawing.Size(230, 64);
+            this.btnExportieren.Size = new System.Drawing.Size(172, 52);
             this.btnExportieren.TabIndex = 14;
             this.btnExportieren.Text = "Exportieren";
             this.btnExportieren.UseVisualStyleBackColor = true;
             // 
             // Wochenansicht
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 532);
+            this.ClientSize = new System.Drawing.Size(375, 432);
             this.Controls.Add(this.btnExportieren);
             this.Controls.Add(this.lblSonntag);
             this.Controls.Add(this.lblSamstag);
@@ -233,7 +218,6 @@ namespace TimeTracker
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Wochenansicht";
             this.Text = "Wochenansicht";
             this.Load += new System.EventHandler(this.ShowData);

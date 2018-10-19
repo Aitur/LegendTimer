@@ -3,14 +3,19 @@ using System.Windows.Forms;
 
 namespace LegendTimer
 {
-    public partial class ZeitNachtragen : Form
+    public partial class AddTimeManually : Form
     {
-        public ZeitNachtragen()
+        public AddTimeManually()
         {
             InitializeComponent();
         }
 
-        private void TimeNachtragen(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CallTextFileOperations(object sender, EventArgs e)
         {
             int tempSecond;
             int tempMinutes;

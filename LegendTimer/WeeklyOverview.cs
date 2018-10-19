@@ -4,13 +4,31 @@ using LegendTimer;
 
 namespace TimeTracker
 {
-    public partial class Wochenansicht : Form
+    public partial class WeeklyOverview: Form
     {
-        public Wochenansicht()
+        public WeeklyOverview()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ResetTimes()
+        {
+            lblMontag.Text = "0:0:0";
+            lblDienstag.Text = "0:0:0";
+            lblMittwoch.Text = "0:0:0";
+            lblDonnerstag.Text = "0:0:0";
+            lblFreitag.Text = "0:0:0";
+            lblSamstag.Text = "0:0:0";
+            lblSonntag.Text = "0:0:0";
 
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowData(object sender, EventArgs e)
         {
             String[] data = TextFileOperations.LoadFile();
@@ -25,15 +43,21 @@ namespace TimeTracker
                 {
                     if (tempDay == daysOfTheWeek[i].Day && tempMonth == daysOfTheWeek[i].Month && tempYear == daysOfTheWeek[i].Year)
                     {
-                        int.TryParse(readDayData[0], out int tempSeconds);
-                        int.TryParse(readDayData[1], out int tempMinutes);
-                        int.TryParse(readDayData[2], out int tempHours);
+                        int.TryParse(readDayData[0], out tempSeconds);
+                        int.TryParse(readDayData[1], out tempMinutes);
+                        int.TryParse(readDayData[2], out tempHours);
                         FillDayLabel(daysOfTheWeek[i].DayOfWeek, tempHours, tempMinutes, tempSeconds);
                     }
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dayOfWeek"></param>
+        /// <param name="hours"></param>
+        /// <param name="minutes"></param>
+        /// <param name="seconds"></param>
         private void FillDayLabel(DayOfWeek dayOfWeek, int hours, int minutes, int seconds)
         {
             switch (dayOfWeek)
@@ -61,7 +85,10 @@ namespace TimeTracker
                     break;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private DateTime[] CalculateDaysOfWeek()
         {
             DateTime mondayOfWeek = CalculateStartOfWeek();
@@ -73,7 +100,10 @@ namespace TimeTracker
 
             return daysOfWeek;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private DateTime CalculateStartOfWeek()
         {
             DateTime now = DateTime.Now;
@@ -82,7 +112,7 @@ namespace TimeTracker
                 case DayOfWeek.Monday:
                     return now;
                 case DayOfWeek.Tuesday:
-                    return now - new TimeSpan(1,0,0,0);
+                    return now - new TimeSpan(1, 0, 0, 0);
                 case DayOfWeek.Wednesday:
                     return now - new TimeSpan(2, 0, 0, 0);
                 case DayOfWeek.Thursday:
