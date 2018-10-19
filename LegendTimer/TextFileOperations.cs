@@ -20,7 +20,7 @@ namespace LegendTimer
         /****************************************************
          * One method to save the file and one to create the stuff that will be saved!! Artur get to work
          ***************************************************/
-        public static void SaveFile(int seconds, int minutes, int hours, int day, int month, int year)
+        public void SaveFile(int seconds, int minutes, int hours, int day, int month, int year)
         {
             //create file if it doesnt exist
             if (!File.Exists(filepath))
@@ -89,7 +89,7 @@ namespace LegendTimer
         /// 
         /// </summary>
         /// <returns></returns>
-        public static String[] LoadFile()
+        public String[] LoadFile()
         {
             string readString;
             string[] readDays;
