@@ -26,5 +26,15 @@ namespace LegendTimer
             TextFileOperations.SaveFile(tempSecond, tempMinutes, tempHours, dateTimePicker.Value.Day,
                 dateTimePicker.Value.Month, dateTimePicker.Value.Year);
         }
+
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
