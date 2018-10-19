@@ -61,7 +61,8 @@ namespace LegendTimer
             //Otherwise the timer was never started, so there would be nothing to save.
             if (!labelZeitAnzeige.Equals("00:00:00"))
             {
-                TextFileOperations.SaveFile(durationOfCurrentSession.Seconds, durationOfCurrentSession.Minutes,
+                TextFileOperations textOps = new TextFileOperations();
+                textOps.SaveFile(durationOfCurrentSession.Seconds, durationOfCurrentSession.Minutes,
                     durationOfCurrentSession.Hours, timepointWhenCurrentSessionStarted.Day,
                     timepointWhenCurrentSessionStarted.Month, timepointWhenCurrentSessionStarted.Year);
             }
