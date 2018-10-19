@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace LegendTimer
 {
-    partial class ZeitNachtragen
+    partial class AddTimeManually
     {
         /// <summary>
         /// Required designer variable.

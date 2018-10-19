@@ -6,62 +6,85 @@ namespace LegendTimer
 {
     public partial class Main : Form
     {
+        bool timerTicking;
+        DateTime timepointWhenCurrentSessionStarted;
+        TimeSpan summedTimeFromAllPreviousSessions = new TimeSpan(0);
+        TimeSpan durationOfCurrentSession;
+
         public Main()
         {
             InitializeComponent();
         }
-        bool _timerTicking;
-        DateTime _timepointWhenCurrentSessionStarted;
-        TimeSpan _summedTimeFromAllPreviousSessions = new TimeSpan(0);
-        TimeSpan _durationOfCurrentSession;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartOrStopSession(object sender, EventArgs e)
         {
-            //If the timer ist currently not ticking, an new Session ist started.
-            if (_timerTicking == false)
+            //If the timer ist currently not ticking, a new session ist started.
+            if (timerTicking == false)
             {
                 buttonStart.Text = "Break";
                 timer1.Start();
-                _timepointWhenCurrentSessionStarted = DateTime.Now;
-                _timerTicking = true;
+                timepointWhenCurrentSessionStarted = DateTime.Now;
+                timerTicking = true;
             }
-            //Otherwise the Session is ended and the resulting time is saved.
+            //Otherwise the session is ended and the final time is saved.
             else
             {
                 buttonStart.Text = "Weiter";
                 timer1.Stop();
-                _summedTimeFromAllPreviousSessions += DateTime.Now - _timepointWhenCurrentSessionStarted;
-                _timerTicking = false;
+                summedTimeFromAllPreviousSessions += DateTime.Now - timepointWhenCurrentSessionStarted;
+                timerTicking = false;
             }
         }
-
-        private void UpdateDisplaiedTime(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateDisplayedTime(object sender, EventArgs e)
         {
-            _durationOfCurrentSession = _summedTimeFromAllPreviousSessions + (DateTime.Now - _timepointWhenCurrentSessionStarted);
-            labelZeitAnzeige.Text = _durationOfCurrentSession.Hours + ":" + _durationOfCurrentSession.Minutes + ":" 
-                + _durationOfCurrentSession.Seconds;
+            durationOfCurrentSession = summedTimeFromAllPreviousSessions + (DateTime.Now - timepointWhenCurrentSessionStarted);
+            labelZeitAnzeige.Text = durationOfCurrentSession.Hours + ":" + durationOfCurrentSession.Minutes + ":" 
+                + durationOfCurrentSession.Seconds;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveBeforeClosing(object sender, FormClosingEventArgs e)
         {
             //Otherwise the timer was never started, so there would be nothing to save.
             if (!labelZeitAnzeige.Equals("00:00:00"))
             {
-                TextFileOperations.SaveFile(_durationOfCurrentSession.Seconds, _durationOfCurrentSession.Minutes,
-                    _durationOfCurrentSession.Hours, _timepointWhenCurrentSessionStarted.Day,
-                    _timepointWhenCurrentSessionStarted.Month, _timepointWhenCurrentSessionStarted.Year);
+                TextFileOperations.SaveFile(durationOfCurrentSession.Seconds, durationOfCurrentSession.Minutes,
+                    durationOfCurrentSession.Hours, timepointWhenCurrentSessionStarted.Day,
+                    timepointWhenCurrentSessionStarted.Month, timepointWhenCurrentSessionStarted.Year);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FillInTime(object sender, EventArgs e)
         {
-            ZeitNachtragen formFillIn = new ZeitNachtragen();
+            AddTimeManually formFillIn = new AddTimeManually();
             formFillIn.Show();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowWeeklyEvaluation(object sender, EventArgs e)
         {
-            Wochenansicht wochenansicht = new Wochenansicht();
-            wochenansicht.Show();
+            WeeklyOverview weeklyoverview = new WeeklyOverview();
+            weeklyoverview.Show();
         }
     }
 }
