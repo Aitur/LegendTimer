@@ -62,9 +62,8 @@ namespace LegendTimer
             if (!labelZeitAnzeige.Equals("00:00:00"))
             {
                 TextFileOperations textOps = new TextFileOperations();
-                textOps.SaveFile(durationOfCurrentSession.Seconds, durationOfCurrentSession.Minutes,
-                    durationOfCurrentSession.Hours, timepointWhenCurrentSessionStarted.Day,
-                    timepointWhenCurrentSessionStarted.Month, timepointWhenCurrentSessionStarted.Year);
+                textOps.SaveFile(new TimeSpan(durationOfCurrentSession.Hours, durationOfCurrentSession.Minutes, durationOfCurrentSession.Seconds),
+                    new DateTime(timepointWhenCurrentSessionStarted.Year, timepointWhenCurrentSessionStarted.Month, timepointWhenCurrentSessionStarted.Day));
             }
         }
         /// <summary>
