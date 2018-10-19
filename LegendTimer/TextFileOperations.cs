@@ -6,7 +6,7 @@ namespace LegendTimer
 {
     class TextFileOperations
     {
-        static string file_path = "legendTime.txt";
+        static string filepath = "legendTime.txt";
 
         /// <summary>
         /// Load the complete saved File
@@ -17,7 +17,7 @@ namespace LegendTimer
             string readString;
             string[] readDays;
             string[] cleanedData;
-            using (StreamReader sr = new StreamReader(file_path))
+            using (StreamReader sr = new StreamReader(filepath))
             {
                 readString = sr.ReadToEnd();
                 readDays = readString.Split('|');
@@ -61,9 +61,9 @@ namespace LegendTimer
         public void SaveFile(TimeSpan spentTime, DateTime dayOfSpentTime)
         {
             //If the File doesn't exist, then it is created and the time is saved.
-            if (!File.Exists(file_path))
+            if (!File.Exists(filepath))
             {
-                File.WriteAllText(file_path,
+                File.WriteAllText(filepath,
                     spentTime.Seconds + ";" + spentTime.Minutes + ";" + spentTime.Hours + ";" + dayOfSpentTime.Day + ";" + dayOfSpentTime.Month + ";" + dayOfSpentTime.Year + "|");
             }
             //Otherwise there is already a file. It is checked, wether there is already an entry for the given day.
@@ -73,7 +73,7 @@ namespace LegendTimer
                 //Otherwise a new Line is written.
                 if (entryChanged == false)
                 {
-                    using (StreamWriter sw = new StreamWriter(file_path))
+                    using (StreamWriter sw = new StreamWriter(filepath))
                     {
                         sw.WriteLine(spentTime.Seconds + ";" + spentTime.Minutes + ";" + spentTime.Hours + ";" + dayOfSpentTime.Day + ";" + dayOfSpentTime.Month + ";" + dayOfSpentTime.Year +
                                      "|");
@@ -113,7 +113,7 @@ namespace LegendTimer
 
         private void fileOverride(TimeSpan[] spentDuration, DateTime[] dayOfSpentTime)
         {
-            using (StreamWriter sw = new StreamWriter(file_path))
+            using (StreamWriter sw = new StreamWriter(filepath))
             {
                 string tempRead = "";
                 for (var i = 0; i < spentDuration.Length; i++)
